@@ -1,0 +1,130 @@
+{
+	"files": {
+		"main.less": {
+			"engines": [
+				{
+					"compiler": "less",
+					"output": "../main.css",
+					"options": {
+						"compress": false,
+						"ieCompat": false,
+						"strictMath": false,
+						"strictUnits": false,
+						"javascriptEnabled": false,
+						"sourcemap": true
+					}
+				}
+			],
+			"sources": [
+				"utility/variable.less",
+				"utility/normalize.less",
+				"utility/mixins.less",
+				"parts/login.less",
+				"parts/left-panel.less",
+				"main.less",
+				"js_css/js-style.less"
+			]
+		},
+		"hero.less": {
+			"engines": [
+				{
+					"compiler": "less",
+					"output": "../hero.css",
+					"options": {
+						"compress": false,
+						"ieCompat": false,
+						"strictMath": false,
+						"strictUnits": false,
+						"javascriptEnabled": false,
+						"sourcemap": true
+					}
+				}
+			],
+			"sources": [
+				"utility/variable.less",
+				"utility/normalize.less",
+				"utility/mixins.less",
+				"parts/login.less",
+				"parts/left-panel.less",
+				"main.less",
+				"js_css/js-style.less",
+				"hero.less"
+			]
+		},
+		"news.less": {
+			"engines": [
+				{
+					"compiler": "less",
+					"output": "../news.css",
+					"options": {
+						"compress": false,
+						"ieCompat": false,
+						"strictMath": false,
+						"strictUnits": false,
+						"javascriptEnabled": false,
+						"sourcemap": true
+					}
+				}
+			],
+			"sources": [
+				"utility/variable.less",
+				"utility/normalize.less",
+				"utility/mixins.less",
+				"parts/login.less",
+				"parts/left-panel.less",
+				"news.less",
+				"main.less",
+				"js_css/js-style.less"
+			]
+		},
+		"single_news.less": {
+			"engines": [
+				{
+					"compiler": "less",
+					"output": "../single_news.css",
+					"options": {
+						"compress": false,
+						"ieCompat": false,
+						"strictMath": false,
+						"strictUnits": false,
+						"javascriptEnabled": false,
+						"sourcemap": true
+					}
+				}
+			],
+			"sources": [
+				"js_css/js-style.less",
+				"main.less",
+				"news.less",
+				"parts/left-panel.less",
+				"parts/login.less",
+				"single_news.less",
+				"utility/mixins.less",
+				"utility/normalize.less",
+				"utility/variable.less"
+			]
+		},
+		"auth.less": {
+			"engines": [
+				{
+					"compiler": "less",
+					"output": "../auth.css",
+					"options": {
+						"compress": false,
+						"ieCompat": false,
+						"strictMath": false,
+						"strictUnits": false,
+						"javascriptEnabled": false,
+						"sourcemap": true
+					}
+				}
+			],
+			"sources": [
+				"auth.less",
+				"utility/mixins.less",
+				"utility/normalize.less",
+				"utility/variable.less"
+			]
+		}
+	}
+}

@@ -1,0 +1,80 @@
+// main: ../main.less
+
+.clearfix() {
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
+}
+
+//Делает квадрат
+.toSquare(@size) {
+    width: @size;
+    height: @size;
+}
+
+.toTable() {
+    display: table;
+    width: 100%;
+}
+
+.cellToTop() {
+    display: table-cell;
+    vertical-align: top;
+}
+.transform-r(@deg) {
+    transform: rotate(@deg);
+    -moz-transform: rotate(@deg);
+    -o-transform: rotate(@deg);
+    -webkit-transform: rotate(@deg);
+}
+
+.greyStroke() {
+    /*Серая обводка вокруг элементов*/
+    box-shadow: 0 0 0 1px #E8E8E8;
+    /*Цвет блоков*/
+    background: #fff;
+}
+
+.ribbonPos(@width) {
+    .transform-r(45deg);
+    width: @width;
+
+    position: absolute;
+    top: (@width/(2*1.414))-(@news-ribbon-height/2)-(@news-padding-vert);
+    right: (@width/(2*1.414))-(@width/2)-(@news-padding-hor);
+}
+
+
+.ribbonColor(@color) when (lightness(@color) < 60%) {color: white}
+.ribbonColor(@color) when (lightness(@color) > 40%) {color: #575757}
+.ribbonColor(@color) {
+    background: @color;
+    box-shadow: -25px 0 0 0 @color,
+                25px 0 0 0 @color;
+}
+
+.lp-icon-animate(@tr: 0.05s, @bgs: 50%) {
+    transition: @tr;
+    background-size: @bgs;
+}
+
+
+.news-footer-icons(@bg-size: 100%) {
+    background-size: @bg-size;
+    display: inline-block;
+    vertical-align: middle;
+}
+// Полоски сложности для героев
+.easymidhard(){
+        margin-left: -5px;
+        width: 12px;
+        height: 14px;
+        display: inline-block;
+        box-shadow: -1px 0 rgba(0,0,0,0.5);
+}

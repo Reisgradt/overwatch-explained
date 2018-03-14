@@ -1,0 +1,172 @@
+//Пашка вставил
+@padding: 20px;
+@grey-color: #ccc;
+@not-active: #f0ecec;
+@list-element-height: 40px;
+
+@top-panel-height: 50px;
+@content-width: 900px;
+
+@header-color: #424488;
+
+.borderRad(@radius: 10px) {
+    border-radius: 0 0 @radius @radius;
+}
+
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    width: 100%;
+    display: table;
+}
+body {
+    height: 100%;
+    width: 100%;
+    background: #fff url(../../img/bg/first.jpg) center no-repeat fixed;
+    background-size: cover;
+    display: table-cell;
+    vertical-align: middle;
+    font-family: Arial, sans-serif;
+}
+
+
+.registration {
+    //display: none;
+    position: relative;
+    z-index: 100;
+    margin: 40px auto;
+    width: 700px;
+    min-height: 200px;
+    //border: 1px @grey-color solid;
+    border-top: none;
+    background: #fff;
+    .borderRad;
+
+    &-header {
+        background: @header-color;
+        color: #fff;
+        font-size: 30px;
+        padding: 15px 30px;
+        .borderRad;
+        position: relative;
+        font-weight: 600;
+
+        &-decoration {
+            position: absolute;
+            list-style-type: none;
+            right: 10px;
+            top: -5px;
+            margin: 0;
+
+            &-item {
+                display: inline-block;
+                width: 20px;
+                height: 15px;
+                background: red;
+                transform: skew(-27deg);
+                border-radius: 5px;
+                margin-left: 3px;
+            }
+        }
+    }
+
+    &-form {
+        @input-zone-width: 250px;
+
+        padding: 30px;
+        padding-bottom: 0;
+        display: table;
+        margin: 0 auto;
+        width: 600px;
+
+        &-row {
+            display: table-row;
+        }
+        &-label,
+        &-input {
+            display: table-cell;
+            box-sizing: content-box;
+            padding-bottom: 40px;
+            text-align: left;
+        }
+        &-label {
+        }
+        &-input {
+            width: @input-zone-width;
+            vertical-align: middle;
+        }
+
+        &-label label {
+            margin-right: 10px;
+            font-weight: bold;
+            font-size: 17px;
+        }
+        &-label label img {
+            border: 1px solid #f2f2f2;
+        }
+        &-input input {
+            border-radius: 7px;
+            border: 1px @grey-color solid;
+            padding: 5px 10px;
+            width: @input-zone-width;
+        }
+        &-input .form-btn {
+            width: auto;
+            padding: 7px 10px;
+            background: @header-color;
+            color: #fff;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+        }
+    }
+
+    &-footer {
+        border-top: 1px @grey-color solid;
+        padding: 25px 15px
+
+    }
+}
+.red {
+    background: #ff2323;
+}
+.yellow {
+    background: #e0ff37;
+}
+.green {
+    background: #25ce1f;
+}
+
+.goHome-link {
+    color: @grey-color;
+
+    &:visited {
+        color: @grey-color;
+    }
+}
+
+@error-color: #ff3838;
+input.form_item_error {
+    border-color: @error-color;
+}
+label.form_item_error {
+    color: @error-color;
+    font-size: 10px;
+    padding-bottom: -18px;
+}
+
+.registration-msg {
+    padding: 20px;
+    padding-bottom: 0;
+    font-size: 19px;
+    font-family: Arial, sans-serif;
+
+    p {
+        margin: 15px 0;
+    }
+}

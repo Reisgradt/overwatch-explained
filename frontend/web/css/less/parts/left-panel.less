@@ -1,0 +1,286 @@
+// main: ../main.less
+
+
+//Левая панель
+.left-panel {
+    width: @left-panel-width;
+    background: @left-menu-color;
+    //.cellToTop;
+    position: absolute;
+    z-index: 99;
+    left: - @left-panel-width;
+    top: 0;
+    bottom: 0;
+
+    &-list {
+        top: 0;
+        left: 0;
+        position: absolute;
+        height: 100%;
+        width: @left-panel-width;
+    }
+}
+
+
+/*Кнопка*/
+.btn-nav,
+.btn-nav-or {
+    width: 100%;
+    height: @left-panel-btn-height;
+    margin: auto;
+    position: relative;
+}
+
+
+/*Полоса справа от кнопки*/
+
+.btn-nav:before,
+.btn-nav-or:before {
+    content: '';
+    height: @left-panel-btn-height + 1px;
+    position: absolute;
+    left: 0;
+}
+
+.btn-nav:before {
+    border-right: @left-panel-btn-strip solid #3b7fff;
+}
+
+.btn-nav-or:before {
+    border-right: @left-panel-btn-strip solid #ff8000;
+}
+
+
+/*Полоса под кнопкой*/
+
+.btn-nav:after,
+.btn-nav-or:after {
+    content: '';
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    bottom: 0;
+    background: linear-gradient(to right, transparent, #6E76B5 40%, #6E76B5 60%, transparent);
+}
+
+
+/*Для всего выплывающего из меню*/
+
+.btn-content {
+    z-index: 90;
+    background: rgba(57, 65, 126, 0.92);
+    /*#39417E; /*rgb(74, 67, 124)*/
+    position: absolute;
+    left: 105px;
+    padding: @lp-btn-content-pad-top
+             @lp-btn-content-pad-left;
+
+    &-search {
+        width: 200px;
+        height: 70px;
+        top: 70px;
+
+        &-text {
+            color: #fff;
+            font-size: 1.4em;
+        }
+    }
+
+    &-heroes {
+        width: @lp-heroes-content-width;
+        top: 140px;
+
+        &-text {
+            color: #fff;
+            font-size: 1.4em;
+            line-height: 30px;
+        }
+    }
+    &-tournamets {
+        top: 210px;
+        width: 400px;
+        height: 400px;
+    }
+    
+    &-login {
+        @height: 350px;
+        width: 350px;
+        height: @height;
+        bottom: @height + 10px;
+    }
+
+    &:before {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 12px 15px 12px 0;
+        border-color: transparent #39417E transparent transparent;
+        left: -20px;
+        top: 22px;
+    }
+}
+
+
+/*Для кнопки "Домой"*/
+
+.btn-home {
+    cursor: pointer;
+    background: transparent url("@{icon-left-panel-path}home.png") center no-repeat;
+    background-size: 70%;
+
+    &:hover {
+        .lp-icon-animate(0.05s, 65%);
+    }
+
+    &:active {
+        .lp-icon-animate(0.05s, 50%);
+    }
+
+    a {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+
+/*Кнопка "Поиск"*/
+
+.btn-search {
+    cursor: pointer;
+    background: transparent url("@{icon-left-panel-path}search.png") center no-repeat;
+    background-size: 50%;
+
+    &:hover {
+        .lp-icon-animate(0.05s, 45%);
+    }
+
+    &:active {
+        .lp-icon-animate(0.05s, 40%);
+    }
+}
+
+.search-form {
+    /* Ширина поля с кнопкой */
+    width: 150px;
+    /* Минимальная высота */
+    min-height: 19px;
+    background: #fff;
+}
+
+.nav-search {
+    height: 20px;
+    width: 125px;
+    border: none;
+    /* Убираем рамку в Chrome и Safari */
+    -webkit-appearance: none;
+
+    &-btn {
+        /* Ширина кнопки */
+        width: 20px;
+        /* Высота кнопки */
+        height: 20px;
+        /* Убираем рамку */
+        border: none;
+        /* Параметры фона */
+        background: #fff url("@{icon-left-panel-path}loupe.png") center no-repeat;
+        background-size: 50%;
+    }
+}
+
+
+/*Кнопка "Герои"*/
+
+.btn-heroes {
+    background: transparent url("@{icon-left-panel-path}heroes.png") center no-repeat;
+    background-size: 60%;
+    cursor: pointer;
+
+    &:hover {
+        .lp-icon-animate(0.05s, 55%);
+    }
+
+    &:active {
+        .lp-icon-animate(0.05s, 50%);
+    }
+}
+
+.heroes-list {
+    list-style-type: none;
+    margin: 0;
+    padding: @lp-btn-content-pad-top 0 0;
+    .clearfix;
+
+    li {
+        float: left;
+        width: @lp-heroes-icon-size;
+        height: @lp-heroes-icon-size;
+        position: relative;
+        margin: 0 @lp-btn-content-mar-heroes
+                @lp-btn-content-mar-heroes-bottom 0;
+
+        a {
+            display: block;
+            height: @lp-heroes-icon-size;
+        }
+    }
+
+    li:nth-child(@{numOfElementOnPage}n) {
+        margin-right: 0;
+    }
+}
+
+.heroes-name {
+    position: absolute;
+    width: 100%;
+    height: 10px;
+    font-size: 10px;
+    color: #fff;
+    bottom: -10px;
+    text-align: center;
+    line-height: 1;
+}
+
+
+/*Кнопка "Турниры"*/
+
+.btn-tournamets {
+    background: transparent url("@{icon-left-panel-path}tournaments.png") center no-repeat;
+    background-size: 60%;
+    cursor: pointer;
+
+    &:hover {
+        .lp-icon-animate(0.05s, 55%);
+    }
+
+    &:active {
+        .lp-icon-animate(0.05s, 50%);
+    }
+}
+
+
+
+@media screen and (min-width: 1200px) {
+    .left-panel-list {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        height: 100%;
+        //width: @left-panel-width;
+    }
+}
+
+
+.btn-login {
+    width: 100%;
+    height: @left-panel-btn-height;
+    //margin: 15px auto 0;
+    position: absolute;
+    background: url("@{icon-left-panel-path}login.png") center no-repeat;
+    cursor: pointer;
+    background-size: 60%;
+    bottom: 10px;
+    left: 0;
+}

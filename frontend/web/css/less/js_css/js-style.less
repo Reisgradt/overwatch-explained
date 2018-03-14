@@ -1,0 +1,59 @@
+// main: ../main.less
+
+
+/*Стрелка вверх/вниз*/
+
+#updown {
+    height: @left-panel-btn-height;
+    width: 100%;
+    margin-top: 20px;
+}
+
+#updown.up,
+#updown.down {
+    cursor: pointer;
+    position: relative;
+}
+
+#updown.up:before,
+#updown.down:before {
+    @koef: 1.5;
+    color: #fff;
+    background: rgba(0,0,0,.3);
+    display: block;
+    border-radius: 100%;
+    text-align: center;
+    width: @left-panel-btn-height / @koef;
+    height: @left-panel-btn-height / @koef;
+    line-height: @left-panel-btn-height / @koef - 5px;
+    font-weight: bold;
+    font-family: Arial;
+    position: absolute;
+    top: 0;
+    left: @left-panel-width / 2 - @left-panel-btn-height / ( @koef * 2 );
+    font-size: 2.2em;
+}
+#updown.up:before:hover,
+#updown.down:before:hover {
+    background: rgba(0,0,0,.8);
+}
+#updown.up:before {
+    //content: '\005E';
+    content: '\2228';
+    transform: rotate(180deg);
+}
+#updown.down:before {
+    content: '\2228';
+}
+
+
+.hidden {
+    display: none;
+}
+
+.fixed {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+}

@@ -1,0 +1,23 @@
+// out: ../single_news.css, compress: true
+
+@import "news.less";
+.news-content-mainImg {
+    margin: auto;
+    text-align: center;
+    img {
+        width: @news-img-width;
+        height: @news-img-height;
+    }
+}
+.tag-r-admin {
+    width: 50px;
+    height: 10px;
+    margin-left: 25px;
+}
+.news-content-html p:before{
+    content: '___';
+    color: transparent;
+}
+.news-content-html {
+     word-wrap: break-word;
+}

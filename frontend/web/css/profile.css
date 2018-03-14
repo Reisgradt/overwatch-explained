@@ -1,0 +1,226 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+.hidden {
+  display: none;
+}
+.profile {
+  width: 900px;
+  margin: 70px auto;
+  border: 1px solid black;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  position: relative;
+  background: #fff;
+}
+.profile-header {
+  font-size: 1.5em;
+  font-weight: bold;
+  position: relative;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 20px;
+}
+.profile-navlist {
+  font-size: 0;
+  list-style-type: none;
+}
+.profile-navlist-item {
+  font-size: 15px;
+  display: inline-block;
+  position: relative;
+  border: 1px solid #ccc;
+  border-left: none;
+  border-bottom: none;
+  background: #f0ecec;
+  z-index: 10;
+  line-height: 40px;
+  height: 40px;
+  cursor: pointer;
+  padding: 0 40px;
+}
+.profile-navlist-item:last-child {
+  border-right: 1px solid #ccc;
+}
+.profile-navlist-item:first-child {
+  border-left: 1px solid #ccc;
+}
+.profile-navlist-item:first-child:before {
+  display: none;
+}
+.profile-group {
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+.profile-item {
+  display: table-row;
+}
+.left-cell,
+.right-cell {
+  display: table-cell;
+  padding-bottom: 20px;
+}
+.left-cell {
+  text-align: right;
+  padding-right: 20px;
+}
+.right-cell {
+  position: relative;
+  text-align: left;
+}
+.input-style {
+  padding: 5px;
+  margin-right: 20px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  width: 300px;
+}
+.data-input {
+  width: 75px;
+}
+.month-input {
+  width: 150px;
+  border-radius: 10px 0 0 10px;
+}
+.active {
+  z-index: 100;
+  background: #fff;
+  box-shadow: 0 2px 0 #fff;
+}
+.active:before {
+  content: '';
+  position: absolute;
+  left: -20px;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 40px 20px;
+  border-color: transparent transparent #fff transparent;
+  z-index: 1;
+  box-shadow: 0 2px 0 #fff;
+}
+.form-btn {
+  height: 25px;
+  width: 100px;
+  border: 1px solid #b5b5b5;
+  border-radius: 5px;
+  font-size: .8em;
+  color: #575757;
+  text-shadow: 0px 0px 1px #e6e6e6;
+  cursor: pointer;
+}
+.form-btn:hover {
+  background: #eee;
+}
+.add-img {
+  width: 200px;
+  height: 25px;
+  line-height: 25px;
+  text-align: center;
+  background: #F0ECEC;
+  border: 1px solid #ccc;
+  tborder-radius: 10px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  padding: 5px;
+  box-sizing: content-box;
+}
+.editImg {
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+  position: relative;
+  /* or fixed or absolute */
+}
+.black-bg {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 200;
+}
+.modal-block {
+  width: 400px;
+  height: 400px;
+  z-index: 300;
+  margin: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+#modal-canvas {
+  cursor: move;
+  background: #ccc;
+}
+.img-control-panel {
+  position: absolute;
+  right: 0;
+  top: 0;
+  list-style-type: none;
+  font-size: 0px;
+}
+.img-control-panel-item {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  margin-right: 5px;
+}
+.img-control-panel-item:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+#zoom-plus {
+  background: rgba(0, 0, 0, 0.4) url() center no-repeat;
+}
+.top-panel {
+  position: fixed;
+  height: 50px;
+  border-bottom: 1px solid #ccc;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 400;
+  background: #fff;
+  font-size: 0;
+}
+.top-panel-container {
+  width: 900px;
+  margin: 0 auto;
+  min-width: 300px;
+  line-height: 50px;
+}
+.top-panel-icon {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background: #000;
+  margin-right: 20px;
+  vertical-align: middle;
+}
+.top-panel-icon a {
+  display: block;
+  height: 100%;
+}
+.top-panel-title {
+  font-weight: bold;
+  font-size: 35px;
+  display: inline-block;
+  vertical-align: middle;
+}
+input.form_item_error {
+  border-color: #ff3838;
+}
+label.form_item_error {
+  color: #ff3838;
+  font-size: 9px;
+}
+
+/*# sourceMappingURL=profile.css.map */

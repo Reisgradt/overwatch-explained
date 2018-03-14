@@ -1,0 +1,342 @@
+// out: ../main.css, compress: true
+@import "utility/normalize";
+@import (reference) "utility/variable";
+@import (reference) "utility/mixins";
+@import "parts/left-panel";
+@import "parts/login";
+@import "js_css/js-style";
+body {
+    background: @outside-visible-color;
+}
+
+//Ну так очень надо
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.main-block {
+    margin: 0 auto;
+    max-width: 1400px;
+    min-width: 900px;
+    .toTable;
+    position: relative;
+}
+
+//Весь контент сайта
+.content-wrapper {
+    min-width: 1000px;
+    background: @content-wrapper-color;
+    .cellToTop;
+    padding-left: @left-panel-width;
+}
+
+//шапка сайта
+.main-header {
+    height: @main-header-height;
+    background: url("@{img-header-path}Overwatch-High-Definition.png") center no-repeat;
+    //background-position: center -350px;
+    color: #fff;
+    //padding: 25px 150px;
+    &-name{
+        position: absolute;
+        margin: 0 auto;
+        left: 15%;
+        top: 85px;
+    }
+    h1 {
+        color: #fff;
+        font-size: 5em;
+        padding: 20px 40px;
+        font-family: @hello-font;
+        line-height: 1;
+        font-weight: 700;
+    }
+}
+
+.title-style1,
+.title-style2 {
+    text-shadow: 0px 0px 1px #6B6B6B;
+}
+
+.title-style1 {}
+
+.title-style2 {
+    margin-left: 340px;
+    color: #FDC60D;
+}
+
+//Контент зона
+.content-zone {
+    .toTable;
+}
+
+//Поле новостей
+.news-section {
+    .cellToTop;
+    padding: @content-zone-padding @content-zone-padding - @content-zone-padding/2 @content-zone-padding @content-zone-padding;
+    text-align: center;
+}
+
+//Сайдбар
+.right-aside {
+    width: @aside-width;
+    .cellToTop;
+    padding: @content-zone-padding @content-zone-padding @content-zone-padding @content-zone-padding - @content-zone-padding/2;
+}
+
+.right-panel {
+    .greyStroke;
+    padding: 20px;
+    &-item {
+        position: relative;
+        &-header {
+            color: #2e2e2e;
+            font-size: 1.3em;
+        }
+        &-content {
+            padding: 0 5px;
+            a {
+                padding-top: 20px;
+                display: block;
+                text-decoration: none;
+                color: #313131;
+                line-height: 1;
+            }
+            a:hover {
+                text-decoration: underline;
+                color: @beautiful-link;
+            }
+        }
+        &:after {
+            content: '';
+            display: block;
+            width: 100%;
+            background: @line-color;
+            height: 1px;
+            margin: 20px 0;
+        }
+        &:last-child:after {
+            display: none;
+        }
+    }
+}
+
+
+//Советы
+
+.tips{
+    .toTable;
+    margin-top: 10px;
+    background-color: rgb(41,50,73);
+    display: inline-block;
+    &_text{
+        .cellToTop;
+        font-size: 12px;
+        padding: 10px;
+        color: #ffffff;
+    }
+    &_idea{
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        width: 50px;
+        height: 100%;
+        background-color: #ffbb00;
+    }
+}
+//Патасовка
+.scrimmage {
+    text-align: center;
+    &_icon {
+        margin: 10px;
+        display: inline-block;
+        width: 200px;
+        height: 300px;
+//        &_border{
+//            clear: both;
+//            padding: 5px;
+//            border: 1px solid #000;
+//            background: #fff;
+//        }
+    }
+    &_title {
+        text-align: center;
+    }
+    &_description {
+        text-align: center;
+        margin: 0 0 10px 0;
+    }
+    &_review {
+        clear: both;
+        text-align: left;
+        &_btn {
+            text-align: center;
+            display: inline-block;
+        }
+    }
+    &_rules {
+        clear: both;
+        text-align: left;
+        &_btn {
+            text-align: center;
+            display: inline-block;
+        }
+    }
+    &_button{
+            background: white;
+            border: 1px solid #b5b5b5;
+            border-radius: 5px;
+            padding: 5px;
+            &:hover{
+                background: #f1f1f1;
+            }
+    }
+}
+
+//Футер
+.main-footer {
+    position: relative;
+    padding: @content-zone-padding;
+    padding-bottom: 0;
+    text-align: justify;
+    &:before {
+        content: '';
+        display: block;
+        width: 100%;
+        background: @line-color;
+        height: 1px;
+    }
+    &-item {
+        display: inline-block;
+        padding: 15px;
+        text-align: left;
+        vertical-align: top;
+    }
+    &-about {
+        width: 400px;
+    }
+    &-login {
+        a {
+            display: block;
+            &:first-child {
+                margin-bottom: 20px;
+            }
+        }
+    }
+    &:after {
+        content: "";
+        display: inline-block;
+        width: 100%;
+    }
+}
+
+.footer-icons {
+    list-style-type: none;
+    width: 60px;
+    margin: 15px 0;
+    a {
+        display: inline-block;
+        .toSquare(25px);
+        background-size: 25px;
+    }
+}
+
+.button-footer {
+    text-decoration: none;
+    border: 1px solid @line-color;
+    border-radius: 15px;
+    color: #444;
+    text-align: center;
+    padding: 5px 10px;
+    &:hover {
+        background: white;
+    }
+}
+
+.footer-text {
+    margin: 0;
+    &:first-child {
+        margin-top: 15px;
+    }
+}
+
+.footer-autor {
+    text-decoration: none;
+    color: #000;
+    &:hover {
+        color: rosybrown;
+    }
+}
+
+.link-pager {
+    margin-bottom: 10px;
+    a {
+        text-decoration: none;
+        color: #000;
+        &:hover {
+            color: @beautiful-link;
+        }
+    }
+    &:last-child {
+        margin-bottom: 0;
+    }
+    list-style-type: square;
+}
+
+.twitch-header {
+    @padding: 10px;
+    float: right;
+    .clearfix;
+    padding: @padding;
+    padding-bottom: @padding - 4.5px;
+    margin-right: @content-zone-padding;
+    margin-top: 10px;
+    .greyStroke;
+}
+
+.player-userinfo__meta-container {
+    padding-top: 15px;
+}
+
+.vk-link {
+    background: url("@{icon-footer}vk.png") center no-repeat;
+}
+
+.youtube-link {
+    background: url("@{icon-footer}youtube.png") center no-repeat;
+}
+
+.twitter-link {
+    background: url("@{icon-footer}twitter.png") center no-repeat;
+}
+
+.twitch-link {
+    background: url("@{icon-footer}twitch.png") center no-repeat;
+}
+
+
+.pagination {
+    padding-left: 0;
+    display: inline-block;
+    li {
+        display: inline-block;
+        .greyStroke;
+        padding: 10px;
+        border-radius: 3px;
+        
+        a {
+          text-decoration: none;
+          color: #000;
+        }
+    }
+    .active {
+            background: @left-menu-color;
+            a {
+                color: #fff;
+        }
+    }
+}

@@ -1,0 +1,170 @@
+//out: ../news.css, compress: true
+@import "main.less";
+.news {
+    text-align: left;
+    padding: @news-padding-vert @news-padding-hor;
+    margin-bottom: @news-padding-vert;
+    .greyStroke;
+    overflow: hidden;
+    &-header {
+        padding-bottom: @news-padding-vert;
+        position: relative;
+        h3 {
+            margin: 0;
+            font-size: 2.35em;
+            color: #444;
+            font-weight: 400;
+        }
+        &-link {
+            text-decoration: none;
+            color: #444;
+        }
+        &-tags {
+            font-size: .7em;
+            padding-left: 3px;
+            a {
+                color: #848484;
+                text-decoration: none;
+            }
+            a:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+    &-content {
+        .toTable;
+        &-imgZone {
+            .cellToTop;
+            padding-right: @news-padding-vert; //Хоть он и не горизонтальный
+            img {
+                width: @news-img-width;
+                height: @news-img-height;
+            }
+        }
+        &-article {
+            position: relative;
+            .cellToTop;
+            &-text {
+                overflow: hidden;
+                height: @news-img-height - @news-btn-height;
+                line-height: @news-line-height;
+                word-wrap: break-word;
+            }
+        }
+    }
+    &-footer {
+        height: @news-footer-height;
+        //line-height: @news-footer-height;
+        margin-top: 20px;
+        &-item {
+            display: inline-block;
+            padding-right: 20px;
+            line-height: @news-footer-height;
+            &:last-child {
+                padding-right: 0;
+            }
+        }
+        &-text {
+            display: inline-block;
+            color: #525151;
+        }
+        &-date {
+            &-img {
+                .toSquare(25px);
+                background: url("@{icon-news-footer}calendar.png") center no-repeat;
+                .news-footer-icons(75%);
+            }
+        }
+        &-views {
+            &-img {
+                .toSquare(25px);
+                background: url("@{icon-news-footer}eye.png") center no-repeat;
+                .news-footer-icons;
+            }
+        }
+        &-likes {
+            &-img {
+                .toSquare(25px);
+                background: url("@{icon-news-footer}heart.png") center no-repeat;
+                .news-footer-icons(75%);
+            }
+        }
+        //&:after,
+        &:before {
+            content: '';
+            display: block;
+            width: 100%;
+            background: @line-color;
+            height: 1px;
+        }
+        a.readMore {
+            display: block;
+            height: @news-btn-height;
+            width: @news-btn-width;
+            border: 1px solid #b5b5b5;
+            border-radius: 5px;
+            font-size: .8em;
+            text-align: center;
+            line-height: @news-btn-height;
+            text-decoration: none;
+            color: #575757;
+            text-shadow: 0px 0px 1px #e6e6e6;
+            cursor: pointer;
+            float: right;
+            margin-top: (@news-footer-height - @news-btn-height) / 2;
+            &:hover {
+                background: #eee;
+            }
+        }
+    }
+}
+
+.tag-ribbon {
+    box-sizing: content-box;
+    height: @news-ribbon-height;
+    line-height: @news-ribbon-height;
+    text-align: center;
+    .ribbonPos(135px);
+    font-family: sans-serif;
+    font-weight: 500;
+    text-shadow: 0px 0px 1px #e6e6e6;
+    font-size: .73em;
+    &__blue {
+        .ribbonColor(#cbd9f7);
+    }
+    &__red {
+        .ribbonColor(#e62727);
+    }
+    &__green {
+        .ribbonColor(#7FE368);
+    }
+    &__yellow {
+        .ribbonColor(#F7EF4F);
+    }
+}
+
+.search {
+    &-tags {
+        margin: -16px 0 10px 0;
+    }
+    &-header {
+        & a {
+            color: #444;
+            text-decoration: none;
+            font-weight: 600;
+        }
+    }
+    &-result {
+        margin-bottom: 35px;
+        font-size: 1.5em;
+        font-weight: 600;
+    }
+}
+
+.find-word {
+    background: aqua;
+}
+
+br {
+    margin-right: 5px;
+}

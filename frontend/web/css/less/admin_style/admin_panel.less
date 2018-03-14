@@ -1,0 +1,89 @@
+// main: ../admin.less
+
+body {
+    background: #f1f1f1;
+}
+
+.error {
+    background: red;
+}
+
+.goodJob {
+    background: green;
+}
+
+label {
+    width: 300px;
+    display: inline-block;
+    padding: 20px 0;
+}
+
+input[name=confirm] {
+    width: 50px;
+}
+.hidden {
+    display: none;
+}
+
+.img-viewer {
+    border: 1px solid black;
+    display: inline-block;
+}
+
+.img-viewer-display {
+    width: 400px;
+    height: 300px;
+    background: #838383;
+    overflow-y: scroll;
+}
+
+.img-viewer-display img {
+    width: 100px;
+    height: 100px;
+}
+
+.img-viewer-display img:hover {
+    box-sizing: border-box;
+    border: 2px solid red;
+}
+
+
+/*Для редактора*/
+
+.news {
+    width: 874px;
+}
+
+.admin-panel {
+    position: fixed !important;
+    bottom: 0px;
+
+    width: 100%;
+    height: 200px;
+    background: #fff;
+    border-top: 1px solid black;
+    overflow-y: scroll;
+
+}
+
+.admin-form {
+    display: table;
+    width: 100%;
+}
+.content-section, .additionally-section {
+    display: table-cell;
+}
+.content-section {
+
+}
+.additionally-section {
+    border-left: 1px solid black;
+    width: 200px;
+}
+
+#content_news-field {
+    width: 500px;
+    overflow-y: scroll;
+    border: 1px solid black;
+    display: inline-block;
+}
